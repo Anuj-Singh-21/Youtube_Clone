@@ -15,8 +15,13 @@ const VideoSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    imgUrl: {
+      type: String,
+      required: true,
+    },
     videoUrl: {
       type: String,
+      required: true,
     },
     views: {
       type: Number,
@@ -38,4 +43,4 @@ const VideoSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("Video", VideoSchema);
+export const Video = mongoose.model("Video", VideoSchema);
