@@ -85,7 +85,7 @@ export const random = async (req, res, next) => {
 export const trend = async (req, res, next) => {
   try {
     const videos = await Video.find().sort({ views: -1 });
-    res.status(200).json(videos.sort((a, b) => b.updatedAt - a.updatedAt));
+    res.status(200).json(videos.sort((a, b) => b.views - a.views));
   } catch (error) {
     next(error);
   }
